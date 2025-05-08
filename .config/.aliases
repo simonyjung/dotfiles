@@ -1,0 +1,13 @@
+
+# Common aliases
+alias vim="nvim"
+alias cat="bat"
+
+# Docker
+alias docker_stop_containers='docker stop $(docker ps -aq) || true'
+alias docker_prune_containers='docker_stop_containers && docker rm $(docker ps -aq) || true'
+alias docker_prune_images='docker rmi --force $(docker images -q) || true'
+alias docker_prune_volumes='docker volume rm $(docker volume ls -q) || true'
+alias docker_quit=$'echo "Stopping OrbStack..." && orbctl shutdown && osascript -e \'quit app "OrbStack"\''
+
+alias docker_nuke="docker_prune_containers && docker_prune_images && docker_prune_volumes && docker system prune -af --volumes && docker_quit"

@@ -24,6 +24,7 @@ export PATH="/Users/simonjung/.rd/bin:$PATH"
 # Simon's alias
 alias vim="nvim"
 alias cat="bat"
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 # Replace ls with eza
 command -v eza >/dev/null &&

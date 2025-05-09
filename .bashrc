@@ -92,6 +92,36 @@ fi
 #alias la='ls -A'
 #alias l='ls -CF'
 
+
+## Alias helper
+# Detect OS
+case "$OSTYPE" in
+  darwin*)  OS="macos" ;;
+  linux*)   OS="linux" ;;
+  msys*)    OS="windows" ;;
+  *)        OS="unknown" ;;
+esac
+
+# Helper: define alias only if command exists and OS matches, else warn
+alias_if() {
+  local name="$1"
+  local cmd="$2"
+  local value="$3"
+  local os_check="$4"
+
+  # OS check (if provided)
+  if [[ -n "$os_check" && "$os_check" != "$OS" ]]; then
+    return
+  fi
+
+  # Command check
+  if command -v "$cmd" >/dev/null 2>&1; then
+    alias "$name"="$value"
+  else
+    echo "⚠️  Skipping alias '$name': '$cmd' is not installed."
+  fi
+}
+
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
@@ -99,6 +129,10 @@ fi
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
+fi
+# Common Aliases (bash, zsh)
+if [ -f ~/.config/.aliases ]; then
+    . ~/.config/.aliases
 fi
 
 # enable programmable completion features (you don't need to enable
@@ -113,4 +147,4 @@ if ! shopt -oq posix; then
 fi
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-alias config='/usr/bin/git --git-dir=/home/node/dotfiles --work-tree=/home/node'
+alias config='/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME'

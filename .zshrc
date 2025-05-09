@@ -1,8 +1,8 @@
-export PATH="/Users/simonjung/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 # Added by LM Studio CLI (lms)
-export PATH="$PATH:/Users/simonjung/.cache/lm-studio/bin"
+export PATH="$PATH:$HOME/.cache/lm-studio/bin"
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-export PATH="/Users/simonjung/.rd/bin:$PATH"
+export PATH="$HOME/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
 
 #############################################################

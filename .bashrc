@@ -118,3 +118,20 @@ fi
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+
+##############################################################
+#  ____  _             _     _   _       
+# / ___|| |_ __ _ _ __| |_  | | | |_ __  
+# \___ \| __/ _` | '__| __| | | | | '_ \ 
+#  ___) | || (_| | |  | |_  | |_| | |_) |
+# |____/ \__\__,_|_|   \__|  \___/| .__/ 
+#                                 |_|    
+##############################################################
+
+# FastFetch
+fastfetch -c "$HOME/.config/fastfetch/config.jsonc"
+
+# Starship prompt
+eval "$(starship init zsh)"
+
+

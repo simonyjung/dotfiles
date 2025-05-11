@@ -28,3 +28,7 @@ if command -v eza &>/dev/null; then
     # tree listing
     alias lt='eza -aT --color=always --group-directories-first --icons'
 fi
+
+# Kubernetes
+alias k='kubectl'
+alias frk='flux reconcile kustomization'

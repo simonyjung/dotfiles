@@ -92,36 +92,6 @@ fi
 #alias la='ls -A'
 #alias l='ls -CF'
 
-
-## Alias helper
-# Detect OS
-case "$OSTYPE" in
-  darwin*)  OS="macos" ;;
-  linux*)   OS="linux" ;;
-  msys*)    OS="windows" ;;
-  *)        OS="unknown" ;;
-esac
-
-# Helper: define alias only if command exists and OS matches, else warn
-alias_if() {
-  local name="$1"
-  local cmd="$2"
-  local value="$3"
-  local os_check="$4"
-
-  # OS check (if provided)
-  if [[ -n "$os_check" && "$os_check" != "$OS" ]]; then
-    return
-  fi
-
-  # Command check
-  if command -v "$cmd" >/dev/null 2>&1; then
-    alias "$name"="$value"
-  else
-    echo "⚠️  Skipping alias '$name': '$cmd' is not installed."
-  fi
-}
-
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
@@ -147,4 +117,21 @@ if ! shopt -oq posix; then
 fi
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-alias config='/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME'
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+
+##############################################################
+#  ____  _             _     _   _       
+# / ___|| |_ __ _ _ __| |_  | | | |_ __  
+# \___ \| __/ _` | '__| __| | | | | '_ \ 
+#  ___) | || (_| | |  | |_  | |_| | |_) |
+# |____/ \__\__,_|_|   \__|  \___/| .__/ 
+#                                 |_|    
+##############################################################
+
+# FastFetch
+fastfetch -c "$HOME/.config/fastfetch/config.jsonc"
+
+# Starship prompt
+eval "$(starship init zsh)"
+
+

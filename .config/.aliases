@@ -32,3 +32,7 @@ fi
 # Kubernetes
 alias k='kubectl'
 alias frk='flux reconcile kustomization'
+alias fgk='flux get kustomizations'
+
+# Sync Quartz
+alias qdeploy='cd ~/Code/temp/quartz/ && npx quartz sync'

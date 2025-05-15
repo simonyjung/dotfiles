@@ -36,3 +36,4 @@ alias fgk='flux get kustomizations'
 
 # Sync Quartz
 alias qdeploy='cd ~/Code/temp/quartz/ && npx quartz sync'
+alias qserve='cd ~/Code/temp/quartz/ && npx quartz build --serve'

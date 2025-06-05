@@ -37,3 +37,8 @@ alias fgk='flux get kustomizations'
 # Sync Quartz
 alias deployq='cd ~/Code/github.com/simonyjung/quartz/ && npx quartz sync'
 alias serveq='cd ~/Code/github.com/simonyjung/quartz/ && npx quartz build --serve'
+
+# AWS Profiles
+alias aws_dendi='export AWS_PROFILE=dendi'
+alias aws_kookyhaus='export AWS_PROFILE=kookyhaus'
+

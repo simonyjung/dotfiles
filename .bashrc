@@ -119,6 +119,10 @@ fi
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 
+# Fix kitty terminal issues
+# https://wiki.archlinux.org/title/Kitty#Terminal_issues_with_SSH
+[ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
+
 ##############################################################
 #  ____  _             _     _   _       
 # / ___|| |_ __ _ _ __| |_  | | | |_ __  

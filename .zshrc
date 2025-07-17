@@ -41,3 +41,7 @@ fastfetch -c "$HOME/.config/fastfetch/config.jsonc"
 
 # Starship prompt
 eval "$(starship init zsh)"
+
+# Fix kitty terminal issues
+# https://wiki.archlinux.org/title/Kitty#Terminal_issues_with_SSH
+[ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"

@@ -5,6 +5,8 @@ export PATH="$PATH:$HOME/.cache/lm-studio/bin"
 export PATH="$HOME/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
 
+export KUBECONFIG=~/.kube/amley-kubeconfig:~/.kube/config
+
 #############################################################
 #     _    _ _                     
 #    / \  | (_) __ _ ___  ___  ___ 

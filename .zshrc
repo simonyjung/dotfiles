@@ -45,3 +45,4 @@ eval "$(starship init zsh)"
 # Fix kitty terminal issues
 # https://wiki.archlinux.org/title/Kitty#Terminal_issues_with_SSH
 [ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
+export PATH="/Users/simonjung/.pixi/bin:$PATH"
